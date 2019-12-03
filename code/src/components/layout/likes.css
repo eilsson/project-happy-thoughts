@@ -1,5 +1,8 @@
 .likes {
+  align-self: center;
   display: flex;
+  grid-column: 1;
+  grid-row: 2;
   color: #777777;
   font-size: 0.9rem;
   font-weight: bold;
