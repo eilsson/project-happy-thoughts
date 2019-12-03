@@ -1,0 +1,25 @@
+button {
+  background-color: #ffadad;
+  border: none;
+  border-radius: 2rem;
+  margin: 0.5rem 0 0.25rem 0;
+  padding: 0.7rem 1.2rem;
+}
+
+.button-text {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+}
+
+.button-text::before,
+.button-text::after {
+  content: '❤️';
+}
+
+.button-text::before {
+  margin-right: 0.3rem;
+}
+
+.button-text::after {
+  margin-left: 0.3rem;
+}
