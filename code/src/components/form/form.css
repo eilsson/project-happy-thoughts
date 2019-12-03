@@ -1,0 +1,27 @@
+.thoughts-form {
+  background-color: #f2f0f0;
+  border: 1px solid #000;
+  color: #000;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+}
+
+.thoughts-form::after {
+  background-color: #000;
+  content: '';
+  height: 100%;
+  left: 8px;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 668px) {
+  .thoughts-form {
+    max-width: 400px;
+  }
+}

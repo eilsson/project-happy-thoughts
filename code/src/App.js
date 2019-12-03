@@ -3,6 +3,8 @@ import { Card } from './components/layout/Card'
 import { Text } from './components/layout/Text'
 import { Likes } from './components/layout/Likes'
 import { Timestamp } from './components/layout/Timestamp'
+import { Form } from './components/form/Form'
+import { TextArea } from './components/form/TextArea'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -29,21 +31,18 @@ export const App = () => {
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
       })
+    setNewThought("")
   }
 
   return (
     <div>
-      <div><p>{newThought}</p></div>
-      <form onSubmit={handleFormSubmit}>
-        <label>
-          <span>What is making you happy right now?</span>
-          <input
-            type="text"
-            onChange={(event) => setNewThought(event.target.value)}
-            value={newThought} />
-        </label>
+      <Form onSubmit={handleFormSubmit}>
+        <TextArea
+          label="What is making you happy right now?"
+          onChange={(event) => setNewThought(event.target.value)}
+          value={newThought} />
         <button type="submit">Send Happy Thought</button>
-      </form>
+      </Form>
       {thoughts.map(thought => (
         <Card key={thought._id}>
           <Text>

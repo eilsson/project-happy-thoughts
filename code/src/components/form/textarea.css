@@ -1,0 +1,15 @@
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.textarea-field {
+  border: 0.1rem solid #bababa;
+  font-weight: bold;
+  padding: 0.5rem 0.7rem;
+  height: 3.5rem;
+  line-height: 1.2;
+  width: 100%;
+}
