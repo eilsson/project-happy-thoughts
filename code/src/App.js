@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const App = () => {
+  useEffect(() => {
+    fetch('https://technigo-thoughts.herokuapp.com/')
+      .then(response => response.json())
+      .then(json => console.log(json))
+  })
   return (
     <div>
-      Find me in src/app.js!
+      This will be a Happy thoughts app.
     </div>
   )
 }
