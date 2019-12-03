@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card } from './components/layout/Card'
+import { Text } from './components/layout/Text'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -43,7 +44,9 @@ export const App = () => {
       </form>
       {thoughts.map(thought => (
         <Card key={thought._id}>
-          <p>{thought.message} {thought.id}</p>
+          <Text>
+            {thought.message}
+          </Text>
           <p>{thought.hearts}</p>
           <p>{thought.createdAt}</p>
         </Card>
