@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card } from './components/layout/Card'
 import { Text } from './components/layout/Text'
+import { Likes } from './components/layout/Likes'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -47,7 +48,7 @@ export const App = () => {
           <Text>
             {thought.message}
           </Text>
-          <p>{thought.hearts}</p>
+          <Likes numberOfLikes={thought.hearts} />
           <p>{thought.createdAt}</p>
         </Card>
       ))}
