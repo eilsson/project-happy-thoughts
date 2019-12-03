@@ -49,7 +49,14 @@ export const App = () => {
           <Text>
             {thought.message}
           </Text>
-          <Likes numberOfLikes={thought.hearts} />
+          {thought.hearts === 0 && (
+            <Likes numberOfLikes={thought.hearts}
+              className="likes" />
+          )}
+          {thought.hearts > 0 && (
+            <Likes numberOfLikes={thought.hearts}
+              className="likes has-likes" />
+          )}
           <Timestamp timestamp={thought.createdAt} />
         </Card>
       ))}

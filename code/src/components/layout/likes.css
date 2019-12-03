@@ -4,8 +4,9 @@
   grid-column: 1;
   grid-row: 2;
   color: #777777;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
+  line-height: 1;
   padding-left: 0.5rem;
   width: 100%;
 }
@@ -29,4 +30,8 @@
   position: absolute;
   width: 40px;
   z-index: -1;
+}
+
+.has-likes .emoji::after {
+  background-color: #ffadad;
 }
