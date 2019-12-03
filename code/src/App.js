@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Card } from './components/layout/Card'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -41,11 +42,11 @@ export const App = () => {
         <button type="submit">Send Happy Thought</button>
       </form>
       {thoughts.map(thought => (
-        <div key={thought._id}>
+        <Card key={thought._id}>
           <p>{thought.message} {thought.id}</p>
           <p>{thought.hearts}</p>
           <p>{thought.createdAt}</p>
-        </div>
+        </Card>
       ))}
     </div>
   )

@@ -1,0 +1,27 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  margin: 0 auto 1rem auto;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+}
+
+.card::after {
+  background-color: #000;
+  content: '';
+  height: 100%;
+  left: 8px;
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 668px) {
+  .card {
+    max-width: 400px;
+  }
+}
