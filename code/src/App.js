@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card } from './components/layout/Card'
-import { Text } from './components/layout/Text'
+import { Message } from './components/layout/Message'
 import { Likes } from './components/layout/Likes'
 import { Timestamp } from './components/layout/Timestamp'
 import { Form } from './components/form/Form'
@@ -46,9 +46,9 @@ export const App = () => {
       </Form>
       {thoughts.map(thought => (
         <Card key={thought._id}>
-          <Text>
+          <Message>
             {thought.message}
-          </Text>
+          </Message>
           {thought.hearts === 0 && (
             <Likes numberOfLikes={thought.hearts}
               className="likes" />
