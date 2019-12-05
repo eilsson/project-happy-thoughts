@@ -1,0 +1,11 @@
+.like-button {
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.has-likes {
+  background-color: #ffadad;
+}

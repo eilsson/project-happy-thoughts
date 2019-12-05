@@ -4,7 +4,7 @@ import './likes.css'
 export const Likes = (props) => {
   return (
     <p className={props.className} >
-      <span aria-label="Heart" role="img" className="emoji">❤️</span>
+      {props.children}
       <span className="numbers-of-likes">x {props.numberOfLikes}</span>
     </p >
   )

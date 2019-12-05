@@ -7,32 +7,14 @@
   font-size: 0.8rem;
   font-weight: bold;
   line-height: 1;
-  padding-left: 0.5rem;
   width: 100%;
 }
 
-.emoji {
-  align-items: center;
-  display: flex;
-  font-size: 1rem;
-  justify-content: center;
-  margin-right: 1rem;
-  position: relative;
-  z-index: 2;
-  width: 20px;
+.numbers-of-likes {
+align-self: center;
+margin-left: 0.3rem;
 }
-
-.emoji::after {
-  background-color: #eaeaea;
-  border-radius: 50%;
-  content: '';
-  height: 40px;
-  margin-top: -0.05rem;
-  position: absolute;
-  width: 40px;
-  z-index: -1;
-}
-
+/*
 .has-likes .emoji::after {
   background-color: #ffadad;
-}
+}*/
