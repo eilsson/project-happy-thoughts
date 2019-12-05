@@ -16,6 +16,10 @@ code {
     monospace;
 }
 
+button:focus {
+  outline: thin dotted;
+}
+
 main {
   margin: 2rem auto;
   width: 80%;

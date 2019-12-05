@@ -56,7 +56,7 @@ export const App = () => {
           label="What is making you happy right now?"
           onChange={(event) => setNewThought(event.target.value)}
           value={newThought} />
-        <Button type="submit" text="Send Happy Thought" />
+        <Button type="submit" text="Send Happy Thought" className="form-button" />
       </Form>
       {thoughts.map(thought => (
         <Card key={thought._id}>
