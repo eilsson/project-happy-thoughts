@@ -14,3 +14,11 @@
   resize: none;
   width: 100%;
 }
+
+.remaining-character-limit {
+  display: block;
+  color: #bababa;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: right;
+}

@@ -11,6 +11,7 @@ export const TextArea = (props) => {
         value={props.value}
         className="textarea-field"
         rows="2" />
+      <span className="remaining-character-limit">{140 - props.value.length}</span>
     </label>
   )
 }
