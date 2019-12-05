@@ -36,30 +36,27 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <main>
       <Form onSubmit={handleFormSubmit}>
         <TextArea
           label="What is making you happy right now?"
           onChange={(event) => setNewThought(event.target.value)}
           value={newThought} />
-        <Button type="submit" text="Send Happy Thought" />
+        <Button
+          type="submit"
+          text="Send Happy Thought"
+          className="submit-happy-thought" />
       </Form>
       {thoughts.map(thought => (
         <Card key={thought._id}>
           <Message>
             {thought.message}
           </Message>
-          {thought.hearts === 0 && (
-            <Likes numberOfLikes={thought.hearts}
-              className="likes" />
-          )}
-          {thought.hearts > 0 && (
-            <Likes numberOfLikes={thought.hearts}
-              className="likes has-likes" />
-          )}
+          <Likes numberOfLikes={thought.hearts}
+            className="likes" />
           <Timestamp timestamp={thought.createdAt} />
         </Card>
       ))}
-    </div>
+    </main>
   )
 }

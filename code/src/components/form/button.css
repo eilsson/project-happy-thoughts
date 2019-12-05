@@ -1,4 +1,10 @@
-button {
+.button-text {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+}
+
+/* Submit in form */
+.submit-happy-thought {
   background-color: #ffadad;
   border: none;
   border-radius: 2rem;
@@ -6,20 +12,15 @@ button {
   padding: 0.7rem 1.2rem;
 }
 
-.button-text {
-  font-family: 'Inconsolata', monospace;
-  font-weight: bold;
-}
-
-.button-text::before,
-.button-text::after {
+.submit-happy-thought .button-text::before,
+.submit-happy-thought .button-text::after {
   content: '❤️';
 }
 
-.button-text::before {
+.submit-happy-thought .button-text::before {
   margin-right: 0.3rem;
 }
 
-.button-text::after {
+.submit-happy-thought .button-text::after {
   margin-left: 0.3rem;
 }
