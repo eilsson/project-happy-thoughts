@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Card } from './components/layout/Card'
-import { Message } from './components/layout/Message'
-import { Likes } from './components/layout/Likes'
-import { LikeButton } from './components/layout/LikeButton'
-import { Timestamp } from './components/layout/Timestamp'
-import { Form } from './components/form/Form'
-import { TextArea } from './components/form/TextArea'
-import { Button } from './components/form/Button'
+import React, { useState, useEffect } from "react"
+import { Form } from "./components/form/Form"
+import { Card } from "./components/card/Card"
+
+
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -15,18 +11,18 @@ export const App = () => {
 
   // Get data from API
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
+    fetch("https://technigo-thoughts.herokuapp.com/")
       .then(response => response.json())
       .then(json => setThoughts(json))
   }, [])
 
+  // Send post request to api
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    // Send post request to api
-    fetch('https://technigo-thoughts.herokuapp.com/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("https://technigo-thoughts.herokuapp.com/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: newThought })
     })
       .then((response) => response.json())
@@ -36,10 +32,11 @@ export const App = () => {
     setNewThought("")
   }
 
+  // Map thorough the array of thoughts
+  // when the id of the thought is the same as the liked thought's
+  // add one heart to that thought
   const addLike = (likedThoughtId) => {
-    // Map thorough the array of thoughts
-    // when the id of the thought is the same as the liekd thought
-    // add one heart to that thought
+
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
         thought.hearts += 1
@@ -51,24 +48,18 @@ export const App = () => {
 
   return (
     <main>
-      <Form onSubmit={handleFormSubmit}>
-        <TextArea
-          label="What is making you happy right now?"
-          onChange={(event) => setNewThought(event.target.value)}
-          value={newThought} />
-        <Button type="submit" text="Send Happy Thought" className="form-button" />
-      </Form>
+      <Form
+        onSubmit={handleFormSubmit}
+        onChange={(event) => setNewThought(event.target.value)}
+        value={newThought} />
       {thoughts.map(thought => (
-        <Card key={thought._id}>
-          <Message>
-            {thought.message}
-          </Message>
-          <Likes numberOfLikes={thought.hearts}
-            className="likes" >
-            <LikeButton id={thought._id} addLike={addLike} hearts={thought.hearts} />
-          </Likes>
-          <Timestamp timestamp={thought.createdAt} />
-        </Card>
+        <Card
+          key={thought._id}
+          addLike={addLike}
+          happyThought={thought.message}
+          hearts={thought.hearts}
+          id={thought._id}
+          timestamp={thought.createdAt} />
       ))}
     </main>
   )

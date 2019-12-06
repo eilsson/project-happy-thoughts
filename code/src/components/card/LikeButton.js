@@ -1,5 +1,5 @@
-import React from 'react'
-import './likebutton.css'
+import React from "react"
+import "./likebutton.css"
 
 export const LikeButton = (props) => {
   // When the heart button is clicked

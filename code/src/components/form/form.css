@@ -1,6 +1,7 @@
 .thoughts-form {
   background-color: #f2f0f0;
   border: 1px solid #000;
+  box-shadow: 7px 7px #000;
   color: #000;
   margin: 0 auto 2rem auto;
   padding: 1rem;
@@ -9,15 +10,58 @@
   max-width: 270px;
 }
 
-.thoughts-form::after {
-  background-color: #000;
-  content: '';
-  height: 100%;
-  left: 8px;
-  position: absolute;
-  top: 8px;
+/* Input */ 
+
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.thoughts-form textarea {
+  border: 0.1rem solid #bababa;
+  font-weight: bold;
+  height: 3.5rem;
+  line-height: 1.2;
+  padding: 0.5rem 0.7rem;
+  resize: none;
   width: 100%;
-  z-index: -1;
+}
+
+.remaining-character-limit {
+  display: block;
+  color: #bababa;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Form button */
+.button-text {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+}
+
+.form-button {
+  background-color: #ffadad;
+  border: none;
+  border-radius: 2rem;
+  margin: 0.5rem 0 0.25rem 0;
+  padding: 0.7rem 1.2rem;
+}
+
+.form-button .button-text::before,
+.form-button .button-text::after {
+  content: '❤️';
+}
+
+.form-button .button-text::before {
+  margin-right: 0.3rem;
+}
+
+.form-button .button-text::after {
+  margin-left: 0.3rem;
 }
 
 @media screen and (min-width: 668px) {
