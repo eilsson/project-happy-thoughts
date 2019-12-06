@@ -11,7 +11,7 @@ export const Card = (props) => {
       <Thought happyThought={props.happyThought} />
       <Likes
         id={props.id}
-        addLike={props.addLike}
+        onLike={props.onLike}
         hearts={props.hearts} />
       <Timestamp timestamp={props.timestamp} />
     </article>

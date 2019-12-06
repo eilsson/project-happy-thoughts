@@ -7,7 +7,7 @@ export const Likes = (props) => {
     <p className="likes" >
       <LikeButton
         id={props.id}
-        addLike={props.addLike}
+        onLike={props.onLike}
         hearts={props.hearts} />
       <span className="number-of-likes">x {props.hearts}</span>
     </p >

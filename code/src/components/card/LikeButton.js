@@ -5,15 +5,14 @@ export const LikeButton = (props) => {
   // When the heart button is clicked
   // use the id for the thought and
   // post like to technigo thoughts
-  const handleLikeClick = () => {
+  const handleLike = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
       method: "Post",
       body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
-      // when the like has been posted invoke the addLike function
-      // with the id as an argument
-      props.addLike(props.id)
+      // onLike comes from App
+      props.onLike(props.id)
     })
   }
 
@@ -21,7 +20,7 @@ export const LikeButton = (props) => {
     <button
       type="button"
       className={`like-button ${props.hearts > 0 ? "has-likes" : ""}`}
-      onClick={handleLikeClick}>
+      onClick={handleLike}>
       <span aria-label="Heart" role="img" className="emoji">❤️</span>
     </button>
   )

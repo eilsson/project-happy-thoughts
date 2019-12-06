@@ -8,7 +8,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
 
-
   // Get data from API
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
@@ -29,13 +28,14 @@ export const App = () => {
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
       })
+
     setNewThought("")
   }
 
-  // Map thorough the array of thoughts
-  // when the id of the thought is the same as the liked thought's
-  // add one heart to that thought
-  const addLike = (likedThoughtId) => {
+  // Map through the array of thoughts
+  // for each thought check if the id is the same as the liked thought's
+  // when it is, add one heart to that thought.
+  const onLike = (likedThoughtId) => {
 
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
@@ -55,7 +55,7 @@ export const App = () => {
       {thoughts.map(thought => (
         <Card
           key={thought._id}
-          addLike={addLike}
+          onLike={onLike}
           happyThought={thought.message}
           hearts={thought.hearts}
           id={thought._id}
