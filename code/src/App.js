@@ -13,7 +13,7 @@ export const App = () => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(response => response.json())
       .then(json => setThoughts(json))
-  }, [])
+  }, [newThought])
 
   // Send post request to api
   const handleFormSubmit = (event) => {
@@ -25,11 +25,8 @@ export const App = () => {
       body: JSON.stringify({ message: newThought })
     })
       .then((response) => response.json())
-      .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-      })
-
-    setNewThought("")
+      .then(() => setNewThought(newThought))
+      .then(() => setNewThought(""))
   }
 
   // Map through the array of thoughts

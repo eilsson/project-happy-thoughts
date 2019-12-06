@@ -9,7 +9,7 @@ export const Form = (props) => {
       <TextArea
         onChange={props.onChange}
         value={props.value} />
-      <FormButton />
+      <FormButton value={props.value} />
     </form>
   )
 }
