@@ -1,0 +1,28 @@
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+textarea {
+  border: 0.1rem solid #bababa;
+  font-weight: bold;
+  height: 3.5rem;
+  line-height: 1.2;
+  padding: 0.5rem 0.7rem;
+  resize: none;
+  width: 100%;
+}
+
+.remaining-character-limit {
+  display: block;
+  color: #bababa;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.exceeded-character-limit {
+  color: #ff5c5c;
+}
