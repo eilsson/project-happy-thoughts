@@ -1,20 +1,13 @@
-## 1. What is this?
-Happy thoughts is a page where you can post and like short messages. The page is made in React and fetches och posts data to an API.
+# Happy thoughts web app made with React
 
-## 2. What did I do?
-![Design](https://i.imgur.com/NUoE9gX.png)
-The requirements for this project was to follow the design as closely as possible
-to list the most recents thoughts, have form to post new thoughts and the ability to like
-a thought.
+Happy thoughts is a web app where you can post and like short messages. The page is made with React and fetches and posts data to an API. One of my projects during Technigo frontend boot camp.
 
-I started with looking at the API data, then planned what components I should use.
-Then I made sure that I could fetch and present the data as I wanted. After that I added the form and the post request. I added the functionality to the like button at the end.
+## What did I do?
 
-In this project I used
-* `useEffect`
-* `useState`
-* CSS grid
-* Flexbox
+I started with looking at the API data, then planned what components I should use. Then I made sure that I could fetch and present the data as I wanted. After that I added the form and the post request. I added the functionality to the like button at the end.
 
-## 3. Where can you see it in action?
-[See the live project](https://happy-thoughts-emmie.netlify.com/)
+In this project I used React, hooks, JSX and CSS. The layout was made with flexbox and grid.
+
+## See Happy thoughts in action
+
+[Happy thoughts web app](https://happy-thoughts-emmie.netlify.com/)
