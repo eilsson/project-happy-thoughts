@@ -1,7 +1,7 @@
 .likes {
   align-self: center;
   display: flex;
-  grid-column: 1;
+  grid-column: 1 / span 2;
   grid-row: 2;
   color: #777777;
   font-size: 0.8rem;
@@ -13,4 +13,11 @@
 .number-of-likes {
   align-self: center;
   margin-left: 0.3rem;
+}
+
+@media screen and (min-width: 320px) {
+  .likes {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
