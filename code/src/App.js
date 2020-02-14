@@ -10,7 +10,7 @@ export const App = () => {
 
   // Get data from API
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://happy-thoughts-emmie.herokuapp.com/")
       .then(response => response.json())
       .then(json => setThoughts(json))
   }, [newThought])
@@ -19,7 +19,7 @@ export const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://happy-thoughts-emmie.herokuapp.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: newThought })

@@ -6,7 +6,7 @@ export const LikeButton = (props) => {
   // use the id for the thought and
   // post like to technigo thoughts
   const handleLike = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
+    fetch(`https://happy-thoughts-emmie.herokuapp.com/${props.id}/like`, {
       method: "Post",
       body: "",
       headers: { "Content-Type": "application/json" }
