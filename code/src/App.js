@@ -61,6 +61,7 @@ export const App = () => {
         {sortOptions.map(sortOption => (
           <SortButton
             key={sortOption}
+            ariaLabel={`${sortOption} thoughts`}
             text={sortOption}
             className={`${thoughtFilter === sortOption ? "sort-button active" : "sort-button"}`}
             onClick={() => setThoughtFilter(sortOption)}
