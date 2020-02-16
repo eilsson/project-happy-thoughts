@@ -1,0 +1,13 @@
+.sort-button {
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 2rem;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+}
+
+.active, 
+.sort-button:hover {
+  background-color: #ffadad;
+}
