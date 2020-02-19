@@ -7,7 +7,6 @@ import { Likes } from "./Likes"
 export const Card = (props) => {
   return (
     <article className="card">
-      {props.children}
       <Thought happyThought={props.happyThought} />
       <Likes
         id={props.id}
