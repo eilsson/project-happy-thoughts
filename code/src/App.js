@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Form } from "./components/form/Form"
 import { Card } from "./components/card/Card"
+import { Loading} from "./components/loading/Loading"
 import { SortContainer } from './components/sort/SortContainer'
 import { SortButton } from './components/sort/SortButton'
 
@@ -10,17 +11,20 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
   const [thoughtFilter, setThoughtFilter] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
 
   const sortOptions = ["new", "old", "popular"]
 
   // Get data from API
   useEffect(() => {
+    setIsLoading(true)
     let url = thoughtFilter ?
       `https://happy-thoughts-emmie.herokuapp.com/?sort=${thoughtFilter}` :
       "https://happy-thoughts-emmie.herokuapp.com"
     fetch(url)
       .then(response => response.json())
       .then(json => setThoughts(json))
+    setIsLoading(false)
   }, [newThought, thoughtFilter])
 
   // Send post request to api
@@ -68,7 +72,7 @@ export const App = () => {
           />
         ))}
       </SortContainer>
-      {
+      {!isLoading && ( 
         thoughts.map(thought => (
           <Card
             key={thought._id}
@@ -78,7 +82,8 @@ export const App = () => {
             id={thought._id}
             timestamp={thought.createdAt} />
         ))
-      }
+      )}
+      {isLoading && (<Loading numberOfCards={5} />)}
     </main >
   )
 }
